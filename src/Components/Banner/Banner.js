@@ -3,7 +3,6 @@ import React, { useEffect,useState } from 'react'
 import axios from '../../axios'
 import { API_KEY,imageURL } from '../../Constants/Constants'
 import './Banner.css'
-
 function Banner() {
   // Let's create a state store movie details fetched by using axios api call
   // we can avoid the ternary operators, if movie present by making intial values of movie as empty object {}
