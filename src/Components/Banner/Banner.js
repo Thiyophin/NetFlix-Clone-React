@@ -1,15 +1,15 @@
 import React, { useEffect,useState } from 'react'
 // since we have created axios instance using baseURL let's import it
 import axios from '../../axios'
-import { API_KEY,imageURL } from '../../Constants/Constants'
+import { imageURL } from '../../Constants/Constants'
 import './Banner.css'
-function Banner() {
+function Banner(props) {
   // Let's create a state store movie details fetched by using axios api call
   // we can avoid the ternary operators, if movie present by making intial values of movie as empty object {}
   const [movie,setMovie] = useState(); //setting initial value to 'undefined' since we used ternary operator to find values of movie object . to avoid ternary operator use we have initial movie to an empty object.
   // when banner mounts we need to get api data of movies . so second argument will be [] empty array
   useEffect(() => {
-    axios.get(`trending/all/week?api_key=${API_KEY}&language=en-US&page=1`).then((response)=>{
+    axios.get(props.url).then((response)=>{
       let min = 0;
       let max = 19;
       let index = Math.floor(Math.random() * (max - min + 1)) + min;

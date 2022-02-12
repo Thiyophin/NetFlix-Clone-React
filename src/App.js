@@ -2,12 +2,12 @@ import Navbar from './Components/Navbar/Navbar';
 import './App.css'
 import Banner from './Components/Banner/Banner';
 import RowPosts from './Components/RowPosts/RowPosts';
-import {action,originals,upcoming,toprated} from './urls'
+import {action,originals,upcoming,toprated,trending} from './urls'
 function App() {
   return (
     <div className="App">
      <Navbar />
-     <Banner />
+     <Banner url={trending}/>
      <RowPosts url={originals} title="Netflix Originals"/>
      <RowPosts url={upcoming} title="Upcoming movies" />
      <RowPosts url={action} title="Action movies" isSmall/>

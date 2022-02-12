@@ -52,7 +52,7 @@ function RowPosts(props) {
       )}
        </div>
        {/* view the youtube if only key is present and a video is found */}
-      { youtube && <YouTube videoId={youtube} opts={opts}/>} 
+      { youtube && <YouTube videoId={youtube} opts={opts} onEnd={()=>setYoutube("")}/>} 
     </div>
   )
 }
